@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <style>
+        body {
+          position: relative;
+          font-family: sans-serif;
+          font-size: 21px;
+          background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+          min-height: 100vh;
+          margin: 0;
+          padding: 20px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: flex-start;
+          gap: 20px;
+        }
+      
+        @media (max-width: 1800px) {
+          body {
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      
+        .content-wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          max-width: 1200px;
+          margin: 0 auto;
+          gap: 20px;
+        }
+      
+        .calculator {
+          background: white;
+          padding: 2rem;
+          border-radius: 15px; 
+          box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+          width: 100%;
+          max-width: 500px;
+          border: 2px solid #ff0000;
+        }
+      
+        .header-logos {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1rem;
+        }
+      
+        .logo {
+          max-width: 150px;
+          height: auto;
+        }
+      
+        .input-group {
+          margin-bottom: 1rem;
+        }
+      
+        label {
+          display: block;
+          margin-bottom: 0.5rem;
+          color: #333;
+          font-weight: bold;
+        }
+      
+        input, select {
+          width: 100%;
+          padding: 0.5rem;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          margin-bottom: 1rem;
+        }
+      
+        button {
+          background: #ff0000;
+          color: white;
+          padding: 1rem 2rem;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          width: 100%;
+          font-size: 1.1rem;
+          transition: background 0.3s;
+        }
+      
+        button:hover {
+          background: #cc0000;
+        }
+      
+        .result {
+          margin-top: 2rem;
+          padding: 1rem;
+          background: #ff0000;
+          border-radius: 5px;
+          text-align: center;
+          color: white;
+        }
+      
+        .result h2 {
+          color: white;
+          margin-bottom: 0.5rem;
+        }
+      
+        .breakdown {
+          text-align: left;
+          margin-top: 1rem;
+          padding: 1rem;
+          background: #fff;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          color: #333;
+        }
+      
+        .breakdown p {
+          margin: 0.5rem 0;
+        }
+      
+        .total-to-receive {
+          font-size: 1.3em;
+          font-weight: bold;
+          color: #ff0000;
+          padding: 1rem;
+          border-top: 2px solid #ff0000;
+          margin-top: 1rem;
+        }
+      
+        /* Add calendar styles */
+        .calendar {
+          background: white;
+          padding: 2rem;
+          border-radius: 15px;
+          box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+          width: 100%;
+          max-width: 500px;
+          margin: 2rem 0 0 0;
+          border: 2px solid #ff0000;
+        }
+      
+        .calendar-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1rem;
+        }
+      
+        .calendar-header h2 {
+          color: #ff0000;
+        }
+      
+        .calendar-grid {
+          display: grid;
+          grid-template-columns: repeat(7, 1fr);
+          gap: 5px;
+        }
+      
+        .calendar-day {
+          border: 1px solid #ddd;
+          padding: 5px;
+          text-align: center;
+          min-height: 80px;
+          background: #fff;
+        }
+      
+        .calendar-day.holiday {
+          background: #ffecec;
+        }
+      
+        .calendar-day.weekend {
+          background: #f5f5f5;
+        }
+      
+        .day-number {
+          font-weight: bold;
+          margin-bottom: 5px;
+          color: #ff0000;  
+        }
+      
+        .shift-select {
+          width: 100%;
+          padding: 2px;
+          font-size: 12px;
+        }
+      
+        .calendar-weekday {
+          text-align: center;
+          font-weight: bold;
+          padding: 5px;
+          background: #ff0000;
+          color: white;
+        }
+      
+        .calendar-nav {
+          padding: 5px 10px;
+          background: #ff0000;
+          color: white;
+          border: none;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+      
+        .calendar-nav:hover {
+          background: #cc0000;
+        }
+      
+        /* Add new style for special days */
+        .calendar-day.special-day {
+          background: #e6e6fa; /* Lilac color */
+        }
+      
+        /* Add new style for special October date */
+        .calendar-day.october-special {
+          background: #ffff99; /* Light yellow */
+        }
+      
+        /* Add new style for September 8th and August 14th */
+        .calendar-day.september-eight {
+          background: #90EE90; /* Light green */
+        }
+      
+        /* Add new style for February 18th */
+        .calendar-day.february-special {
+          background: #ffffff; /* White */
+        }
+      
+        /* Add new style for October, November and December special dates */
+        .calendar-day.special-pink {
+          background: #ffb6c1; /* Light pink */
+        }
+      
+        /* Add new styles for link section */
+        .link-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 10px;
+        }
+      
+        .link-section {
+          background: white;
+          padding: 2rem;
+          border-radius: 15px;
+          box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+          width: 100%;
+          max-width: 500px;
+          margin: 2rem 0;
+          text-align: center;
+          border: 2px solid #ff0000;
+        }
+      
+        .link-section a {
+          color: #ff0000;
+          text-decoration: none;
+          font-weight: bold;
+        }
+      
+        .link-section a:hover {
+          text-decoration: underline;
+        }
+      
+        /* Add watermark styles */
+        body::before {
+          content: "CC.OO";
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          align-items: center;
+          font-size: 48px;
+          color: rgba(227, 6, 19, 0.1); /* Light red color */
+          pointer-events: none;
+          z-index: -1;
+          transform: rotate(-45deg);
+          word-spacing: 3em;
+          line-height: 2;
+          padding: 20px;
+        }
+        
+        /* Add new style for calendar footer */
+        .calendar-footer {
+          text-align: center;
+          margin-top: 1rem;
+          padding: 1rem;
+          background: #fff;
+          border-top: 2px solid #ff0000;
+          font-size: 0.9em;
+        }
+      </style>
+   </head>
+   <body>
+    <div class="link-section">
+        <p>Documentos importantes:</p>
+        <div class="link-wrapper">
+          <a href="https://drive.google.com/file/d/1RS3zRXdmAYNI4ZVDWmA_bJoRnElF650W/view?usp=drive_link">Ver Convenio</a>
+          <a href="https://autonomica.fsc.ccoo.es/noticia:668954--Analizamos_los_nuevos_permisos_y_medidas_de_conciliacion_y_su_aplicacion_al_personal_de_la_Junta&opc_id=9e5b373957cf119b744a589fd4ee96e6">Permisos no retribuidos </a>
+          <a href="Calendario cerveza.pdf">Calendario Cerveza</a>
+          <p>VACACIONES 2.025</p>
+          <a href="Vacaciones Calidad.pdf">Vacaciones Calidad 2025</a> 
+          <a href="Vacaciones Logistica.pdf">Vacaciones Logística 2025</a> 
+          <a href="Vacaciones Cerveceria.pdf">Vacaciones Elaboración 2025</a> 
+          <a href="MTO 2025.pdf">Vacaciones Mantenimiento 2025</a> 
+          <a href="Vacaciones Envasado 2.025.pdf">Vacaciones Envasado 2025</a>
+        </div>
+   </body>
+</html>
