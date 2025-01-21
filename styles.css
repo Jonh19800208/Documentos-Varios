@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
   border: 2px solid red;
@@ -23,22 +23,24 @@ h1, h2 {
 }
 
 .main-links, .vacation-links, .shifts-links {
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
   justify-content: center;
-  gap: 8px;
-  margin: 10px 0;
-  padding: 0;
-  overflow-x: auto;
 }
 
 .link-item {
   border: 1px solid red;
   border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
   transition: all 0.3s ease;
-  flex: 0 0 auto;
-  width: 100px;
+  width: auto;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-links .link-item:nth-child(1) { background-color: #FFE77A; }
@@ -60,16 +62,16 @@ h1, h2 {
 .shifts-links .link-item:nth-child(5) { background-color: #4169E1; }
 
 .link-item:hover {
-  transform: scale(1.02);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .link-icon {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   fill: red;
   display: block;
-  margin: 0 auto 3px auto;
+  margin: 0 auto 5px auto;
 }
 
 a {
@@ -77,31 +79,36 @@ a {
   text-decoration: none;
   text-align: center;
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   width: 100%;
 }
 
 @media (max-width: 768px) {
-  .link-item {
-    width: 80px;
+  .container {
+    padding: 10px;
+  }
+  
+  .main-links, .vacation-links, .shifts-links {
+    gap: 8px;
+  }
+  
+  .link-icon {
+    width: 25px;
+    height: 25px;
   }
   
   a {
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 
 @media (max-width: 480px) {
   .container {
-    padding: 8px;
+    padding: 5px;
   }
   
-  .link-item {
-    width: 70px;
-  }
-  
-  a {
-    font-size: 10px;
+  .main-links, .vacation-links, .shifts-links {
+    gap: 5px;
   }
   
   .link-icon {
@@ -109,7 +116,20 @@ a {
     height: 20px;
   }
   
-  .link-item {
-    padding: 4px;
+  a {
+    font-size: 11px;
+  }
+}
+
+/* Add page break styles */
+.break-before {
+  page-break-before: always;
+  break-before: page;
+}
+
+@media print {
+  .break-before {
+    page-break-before: always;
+    break-before: page;
   }
 }
