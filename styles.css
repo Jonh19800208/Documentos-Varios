@@ -23,18 +23,22 @@ h1, h2 {
 }
 
 .main-links, .vacation-links, .shifts-links {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
   gap: 8px;
   margin: 10px 0;
-  padding: 0 35%;  
+  padding: 0;
+  overflow-x: auto;
 }
 
 .link-item {
   border: 1px solid red;
   border-radius: 5px;
-  padding: 5px;  
+  padding: 5px;
   transition: all 0.3s ease;
+  flex: 0 0 auto;
+  width: 100px;
 }
 
 .main-links .link-item:nth-child(1) { background-color: #FFE77A; }
@@ -61,11 +65,11 @@ h1, h2 {
 }
 
 .link-icon {
-  width: 25px;  
-  height: 25px;  
+  width: 25px;
+  height: 25px;
   fill: red;
   display: block;
-  margin: 0 auto 3px auto;  
+  margin: 0 auto 3px auto;
 }
 
 a {
@@ -73,15 +77,17 @@ a {
   text-decoration: none;
   text-align: center;
   display: block;
-  font-size: 12px;  
+  font-size: 12px;
   width: 100%;
 }
 
 @media (max-width: 768px) {
-  .main-links, .vacation-links, .shifts-links {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0 40%;  
-    gap: 6px;
+  .link-item {
+    width: 80px;
+  }
+  
+  a {
+    font-size: 11px;
   }
 }
 
@@ -90,14 +96,12 @@ a {
     padding: 8px;
   }
   
-  .main-links, .vacation-links, .shifts-links {
-    grid-template-columns: 1fr;
-    padding: 0 35%;  
-    gap: 4px;
+  .link-item {
+    width: 70px;
   }
   
   a {
-    font-size: 11px;
+    font-size: 10px;
   }
   
   .link-icon {
