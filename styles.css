@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   border: 2px solid red;
@@ -19,37 +19,94 @@ h1, h2 {
   text-align: center;
   border-bottom: 2px solid red;
   padding-bottom: 10px;
+  margin-top: 30px;
 }
 
-.main-links, .vacation-links {
-  display: flex;
-  flex-direction: column;
+.main-links, .vacation-links, .shifts-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 15px;
   margin: 20px 0;
+  padding: 0 25%;  
 }
 
-a {
-  color: white;
-  background-color: red;
-  text-decoration: none;
-  padding: 10px;
+.link-item {
   border: 1px solid red;
   border-radius: 5px;
-  text-align: center;
+  padding: 10px;
   transition: all 0.3s ease;
 }
 
-a:hover {
-  background-color: darkred;
+/* New alternating colors for main links */
+.main-links .link-item:nth-child(1) { background-color: #FFE77A; } /* Yellow */
+.main-links .link-item:nth-child(2) { background-color: #A7C7E7; } /* Blue */
+.main-links .link-item:nth-child(3) { background-color: #FFB7C5; } /* Pink */
+.main-links .link-item:nth-child(4) { background-color: #FFB3B3; } /* Light red */
+.main-links .link-item:nth-child(5) { background-color: #98FB98; } /* Green */
+
+/* New alternating colors for vacation links */
+.vacation-links .link-item:nth-child(1) { background-color: #FFB347; } /* Orange */
+.vacation-links .link-item:nth-child(2) { background-color: #4169E1; } /* Dark blue */
+.vacation-links .link-item:nth-child(3) { background-color: #50C878; } /* Emerald green */
+.vacation-links .link-item:nth-child(4) { background-color: #FFE77A; } /* Yellow */
+.vacation-links .link-item:nth-child(5) { background-color: #A7C7E7; } /* Blue */
+
+/* New alternating colors for shifts links */
+.shifts-links .link-item:nth-child(1) { background-color: #FFB7C5; } /* Pink */
+.shifts-links .link-item:nth-child(2) { background-color: #FFB3B3; } /* Light red */
+.shifts-links .link-item:nth-child(3) { background-color: #98FB98; } /* Green */
+.shifts-links .link-item:nth-child(4) { background-color: #FFB347; } /* Orange */
+.shifts-links .link-item:nth-child(5) { background-color: #4169E1; } /* Dark blue */
+
+.link-item:hover {
   transform: scale(1.02);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-@media (max-width: 600px) {
+.link-icon {
+  width: 40px;
+  height: 40px;
+  fill: red;
+  display: block;
+  margin: 0 auto 5px auto;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  font-size: 14px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .main-links, .vacation-links, .shifts-links {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 15%;  
+  }
+}
+
+@media (max-width: 480px) {
   .container {
     padding: 10px;
   }
   
+  .main-links, .vacation-links, .shifts-links {
+    grid-template-columns: 1fr;
+    padding: 0 10%;  
+  }
+  
   a {
-    font-size: 14px;
+    font-size: 13px;
+  }
+  
+  .link-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .link-item {
+    padding: 8px;
   }
 }
