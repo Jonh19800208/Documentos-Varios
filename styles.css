@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   border: 2px solid red;
@@ -27,36 +27,33 @@ h1, h2 {
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
   margin: 20px 0;
-  padding: 0 25%;  
+  padding: 0 35%;  
 }
 
 .link-item {
   border: 1px solid red;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;  
   transition: all 0.3s ease;
 }
 
-/* New alternating colors for main links */
-.main-links .link-item:nth-child(1) { background-color: #FFE77A; } /* Yellow */
-.main-links .link-item:nth-child(2) { background-color: #A7C7E7; } /* Blue */
-.main-links .link-item:nth-child(3) { background-color: #FFB7C5; } /* Pink */
-.main-links .link-item:nth-child(4) { background-color: #FFB3B3; } /* Light red */
-.main-links .link-item:nth-child(5) { background-color: #98FB98; } /* Green */
+.main-links .link-item:nth-child(1) { background-color: #FFE77A; }
+.main-links .link-item:nth-child(2) { background-color: #A7C7E7; }
+.main-links .link-item:nth-child(3) { background-color: #FFB7C5; }
+.main-links .link-item:nth-child(4) { background-color: #FFB3B3; }
+.main-links .link-item:nth-child(5) { background-color: #98FB98; }
 
-/* New alternating colors for vacation links */
-.vacation-links .link-item:nth-child(1) { background-color: #FFB347; } /* Orange */
-.vacation-links .link-item:nth-child(2) { background-color: #4169E1; } /* Dark blue */
-.vacation-links .link-item:nth-child(3) { background-color: #50C878; } /* Emerald green */
-.vacation-links .link-item:nth-child(4) { background-color: #FFE77A; } /* Yellow */
-.vacation-links .link-item:nth-child(5) { background-color: #A7C7E7; } /* Blue */
+.vacation-links .link-item:nth-child(1) { background-color: #FFB347; }
+.vacation-links .link-item:nth-child(2) { background-color: #4169E1; }
+.vacation-links .link-item:nth-child(3) { background-color: #50C878; }
+.vacation-links .link-item:nth-child(4) { background-color: #FFE77A; }
+.vacation-links .link-item:nth-child(5) { background-color: #A7C7E7; }
 
-/* New alternating colors for shifts links */
-.shifts-links .link-item:nth-child(1) { background-color: #FFB7C5; } /* Pink */
-.shifts-links .link-item:nth-child(2) { background-color: #FFB3B3; } /* Light red */
-.shifts-links .link-item:nth-child(3) { background-color: #98FB98; } /* Green */
-.shifts-links .link-item:nth-child(4) { background-color: #FFB347; } /* Orange */
-.shifts-links .link-item:nth-child(5) { background-color: #4169E1; } /* Dark blue */
+.shifts-links .link-item:nth-child(1) { background-color: #FFB7C5; }
+.shifts-links .link-item:nth-child(2) { background-color: #FFB3B3; }
+.shifts-links .link-item:nth-child(3) { background-color: #98FB98; }
+.shifts-links .link-item:nth-child(4) { background-color: #FFB347; }
+.shifts-links .link-item:nth-child(5) { background-color: #4169E1; }
 
 .link-item:hover {
   transform: scale(1.02);
@@ -64,11 +61,11 @@ h1, h2 {
 }
 
 .link-icon {
-  width: 40px;
-  height: 40px;
+  width: 25px;  
+  height: 25px;  
   fill: red;
   display: block;
-  margin: 0 auto 5px auto;
+  margin: 0 auto 3px auto;  
 }
 
 a {
@@ -76,14 +73,14 @@ a {
   text-decoration: none;
   text-align: center;
   display: block;
-  font-size: 14px;
+  font-size: 12px;  
   width: 100%;
 }
 
 @media (max-width: 768px) {
   .main-links, .vacation-links, .shifts-links {
     grid-template-columns: repeat(2, 1fr);
-    padding: 0 15%;  
+    padding: 0 40%;  
   }
 }
 
@@ -94,19 +91,19 @@ a {
   
   .main-links, .vacation-links, .shifts-links {
     grid-template-columns: 1fr;
-    padding: 0 10%;  
+    padding: 0 35%;  
   }
   
   a {
-    font-size: 13px;
+    font-size: 11px;
   }
   
   .link-icon {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
   }
   
   .link-item {
-    padding: 8px;
+    padding: 4px;
   }
 }
