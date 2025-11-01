@@ -1,6 +1,6 @@
-body {
+html, body {
   background-color: #ff6961;
-  font-family: Arial, sans-serif;
+  font-family: "Nexa", "Cal Sans", "Noto Sans", Arial, sans-serif;
   margin: 0;
   padding: 20px;
 }
@@ -46,7 +46,7 @@ h1, h2 {
 .main-links .link-item:nth-child(1) { background-color: #FFE77A; }
 .main-links .link-item:nth-child(2) { background-color: #A7C7E7; }
 .main-links .link-item:nth-child(3) { background-color: #FFB7C5; }
-.main-links .link-item:nth-child(4) { background-color: #DDA0DD; }
+.main-links .link-item:nth-child(4) { background-color: #FFB3B3; }
 .main-links .link-item:nth-child(5) { background-color: #98FB98; }
 
 .vacation-links .link-item:nth-child(1) { background-color: #FFB347; }
@@ -55,11 +55,24 @@ h1, h2 {
 .vacation-links .link-item:nth-child(4) { background-color: #FFE77A; }
 .vacation-links .link-item:nth-child(5) { background-color: #A7C7E7; }
 
-.shifts-links .link-item:nth-child(1) { background-color: #52ACFC; }
+.shifts-links .link-item:nth-child(1) { background-color: #FFB7C5; }
 .shifts-links .link-item:nth-child(2) { background-color: #FFB3B3; }
 .shifts-links .link-item:nth-child(3) { background-color: #98FB98; }
 .shifts-links .link-item:nth-child(4) { background-color: #FFB347; }
 .shifts-links .link-item:nth-child(5) { background-color: #4169E1; }
+
+.vacation2026-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+.vacation2026-links .link-item:nth-child(1) { background-color: #FFB347; }
+.vacation2026-links .link-item:nth-child(2) { background-color: #4169E1; }
+.vacation2026-links .link-item:nth-child(3) { background-color: #50C878; }
+.vacation2026-links .link-item:nth-child(4) { background-color: #FFE77A; }
+.vacation2026-links .link-item:nth-child(5) { background-color: #A7C7E7; }
 
 .link-item:hover {
   transform: scale(1.05);
