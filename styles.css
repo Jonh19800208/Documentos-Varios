@@ -93,7 +93,7 @@ a {
   text-align: center;
   display: block;
   font-size: 14px;
-  width: 100%;
+  width: 80%;
 }
 
 @media (max-width: 768px) {
