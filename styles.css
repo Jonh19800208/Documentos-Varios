@@ -64,6 +64,7 @@ h1, h2 {
 .shifts-links .link-item:nth-child(3) { background-color: #98FB98; }
 .shifts-links .link-item:nth-child(4) { background-color: #FFB347; }
 .shifts-links .link-item:nth-child(5) { background-color: #4169E1; }
+.shifts-links .link-item:nth-child(6) { background-color: #FFE77A; }
 
 .vacation2026-links {
   display: grid;
