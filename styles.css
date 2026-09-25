@@ -6,7 +6,7 @@ html, body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 500px;
   margin: 0 auto;
   padding: 15px;
   border: 2px solid red;
